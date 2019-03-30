@@ -1,14 +1,14 @@
 #include "semaphore_lib_through_while_loop.h"
 
-#define NUMB_CUSTOMERS 20
-#define NUMB_FREESEATS 6
+#define NUMB_CUSTOMERS 20 //give the no of NUMB_CUSTOMERS 
+#define NUMB_FREESEATS 6  // maximum no of NUMB_FREESEATS
 
 
 
-sem_t Customers;
-sem_t Barber;
-sem_t Seats;
-sem_t print;
+sem_t Customers; // makes barber sleeps if no customers   
+sem_t Barber;  // used to call customers to cutting chair
+sem_t Seats;  //  to protect FreeSeats variable
+sem_t print;    
 int FreeSeats=NUMB_FREESEATS;
 void *barber(void *thread_n)
 {
